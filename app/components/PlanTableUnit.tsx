@@ -8,7 +8,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function PlanTableUnit({price, tag, websiteNum, storage, database, bandwidth, ssd, vcpus, worldpress, serverSpeed, header=false}: PlaneTableTypes) {
     return (
-        <ul className={`${styles.tableColumn} ${header ? styles.header : null}`} >
+        <ul className={`${styles.tableColumn} ${styles.columns}`} >
             <li>{price!=undefined ? (
                     <>
                         <span className={styles.tag}>{tag}</span>

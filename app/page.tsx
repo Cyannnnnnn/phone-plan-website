@@ -50,7 +50,7 @@ export default function Home() {
       {/* This is the table of plans */}
       <section className={styles.planTable}>
 
-        <ul className={styles.header} >
+        <ul className={`${styles.tableColumn} ${styles.header}`} >
             <li></li>
 
             <li>Website number</li>
