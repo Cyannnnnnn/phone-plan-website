@@ -28,6 +28,8 @@ export default function Home() {
 
 
 
+
+
   
   return (
     <main className={`${styles.planMain} ${robotoSlab.className}`}>
@@ -48,7 +50,7 @@ export default function Home() {
 
 
       {/* This is the table of plans */}
-      <section className={styles.planTable}>
+      <section className={styles.planTable} style={{gridTemplateColumns: `repeat(${allPlans.length + 1}, 1fr)`}}>
 
         <ul className={`${styles.tableColumn} ${styles.header}`} >
             <li></li>

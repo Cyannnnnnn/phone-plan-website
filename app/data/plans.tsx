@@ -54,5 +54,6 @@ export const allPlans = [
         worldpress: true, 
         serverSpeed: true
         
-    }
+    },
+    
 ]
