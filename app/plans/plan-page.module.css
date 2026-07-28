@@ -1,0 +1,190 @@
+
+/* Plan Page CSS Starts Here */
+/* 
+*/
+
+.planMain {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+
+}
+
+.planHeader {
+    background-color: #DCDCDC;
+    margin: 0px;
+    width: 100vw;
+    height: 15%;
+    min-height: 150px;
+    color:#FFEBCD;
+    text-shadow: 1px 1px 2px white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.planH {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+
+.planP {
+    width: 40%;
+    min-width: 400px;
+    color:lightgray;
+}
+
+
+/* Plan Table CSS */
+
+.planTable {
+    height: 80%;
+    min-height: 600px;
+    margin: 0px;
+    width: 95%;
+    /* border: 1px green solid; */
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+  text-align: left;
+}
+
+.header > li {
+    background-color: lightgray;
+}
+
+
+.header > :first-child {
+    border:none;
+    background-color: white;
+}
+
+.header > :last-child {
+    border:none;
+    background-color: white;
+}
+
+.columns > li {
+    justify-content: center;
+}
+
+.tableColumn {
+    /* border: 2px red solid; */
+    display: flex;
+    flex-direction: column;
+    /* border: transparent; */
+    width: 20%;
+    height: 80%;
+    min-width: 200px;
+    min-height: 500px;
+    padding: 0px;
+    list-style: none;
+    transition: 
+        background-color 0.5s ease,
+        border 0.5s ease,
+        transform 0.5s ease;
+}
+
+
+
+
+
+
+
+.arrow {
+    margin-left: 0.5rem;
+}
+
+
+
+
+
+/* Animation here */
+.tableColumn:not(.header):hover {
+    background-color: #2F4F4F;
+    border: 2px white solid;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.tableColumn:not(.header):hover > :last-child {
+    background-color: gold;
+    color: white;
+}
+
+.tableColumn:hover >:first-child > .tag {
+    width: 5.5rem;
+    height: 2rem;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    border-radius: 2rem;
+}
+
+/* First li in the table(The big one) */
+.tableColumn > :first-child {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+
+
+.tableColumn > :not(:first-child) {
+    flex: 1;
+}
+
+.tableColumn > :first-child > span {
+    color: white;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tableColumn > :first-child > :first-child {
+    color: blue;
+    font-size: 0.9rem;
+}
+
+.tableColumn > :first-child > :nth-child(2) {
+    color: white;
+    font-size: 3rem;
+}
+
+.tableColumn > :first-child > :nth-child(3) {
+    color: darkgray;
+    font-size: 0.9rem;
+}
+
+
+
+
+.tableColumn > li {
+    color:darkgray;
+    border-bottom: 1px gray solid;
+    display: flex;
+    align-items: center;
+}
+
+.tableColumn > :last-child {
+    color:blue;
+    border: none;
+}
+
+
+
+
+
+
+/* Plan Page CSS Ends Here */
+/* 
+*/

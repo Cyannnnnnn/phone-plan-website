@@ -1,0 +1,33 @@
+.navBar {
+    border: 1px red solid;
+    display:flex;
+    width: 100vw;
+    height: 10vh;
+    min-height: 80px;
+}
+
+.leftSection {
+    width: 40%;
+    /* border: 1px blue solid; */
+    display:flex;
+}
+
+.leftSection > * {
+    border: 1px green solid;
+
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    
+    width: 25%;
+    height: 100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftSection > a {
+    
+    /* border: 1px yellow solid; */
+}
