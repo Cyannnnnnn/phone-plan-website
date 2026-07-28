@@ -1,4 +1,4 @@
-import styles from "../plan-page.module.css";
+import styles from "../styles/plan-page.module.css";
 import type { PlaneTableTypes } from "../types/type";
 import { CiCircleCheck } from "react-icons/ci";
 import { GoDash } from "react-icons/go";
