@@ -9,6 +9,10 @@
     display: flex;
     /* border: 1px blue solid; */
     gap: 0px;
+
+    position:sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navContainer * .active {
@@ -24,10 +28,15 @@
     
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    margin-left: 1.5%;
+    /* justify-content: space-around; */
 
-    font-size: 2rem; 
+    font-size: 1.5rem; 
     /* border: red 1px solid; */
+}
+
+.leftSection > * {
+    margin-right: 15%;
 }
 
 .leftSection a:hover {

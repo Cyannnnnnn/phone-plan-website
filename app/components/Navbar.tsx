@@ -23,6 +23,9 @@ export default function Navbar() {
                 </Link>
 
             <section className={`${styles.leftSection} ${bebas.className}`}>
+
+
+                <Link href="/">HOME</Link>
                 
 
                 <li 
@@ -36,7 +39,7 @@ export default function Navbar() {
                         <span>Internet</span>
                         <span>Cable TV</span>
                     </section>
-                    
+
                 </li>
 
                 <Link href="/plans" 
