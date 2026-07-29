@@ -1,0 +1,111 @@
+.phoneAd1 {
+    /* border: 1px red solid; */
+    width: 85%;
+    height: 35%;
+    margin: 2% auto;
+
+    display: flex;
+
+    background-image: url("/phoneAd1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    
+    border-radius: 2rem;
+
+    transition: background-size 1s ease;
+
+}
+
+.phoneAd1:hover {
+    background-size: 105% 105%;
+}
+
+
+/* Left Section and Right Section's Shared CSS */
+.leftSection, .rightSection {
+    /* border: 1px yellow solid; */
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    
+}
+
+
+/* Left Section begins here */
+
+.leftSection {
+    padding-bottom: 5.55rem;
+    width: 39%;
+}
+
+.leftSection p {
+    /* border: 1px blue solid; */
+    margin: 0px;
+    color:#B8860B;
+    padding: 0.2rem 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+
+.leftSection > :first-child {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.leftSection > :nth-child(2) {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.leftSection > :nth-child(3) {
+    font-size: 0.9rem;
+}
+.leftSection > :nth-child(4) {
+    font-size: 0.9rem;
+}
+
+
+
+
+/* Right Section begins HERE */
+.rightSection {
+    margin-left: auto;
+    width: 35%;
+    padding-top: 10%;
+    
+}
+
+
+.rightSection > button {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+
+    width: 40%;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    background-color: #FDF5E6;
+    background-color: lightblue;
+
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color:#B8860B;;
+
+    transition: transform 0.5s ease,
+                background-color 0.5s ease,
+                color 0.5s ease;
+}
+
+.rightSection > button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #48D1CC;
+    color:#6B8E23;
+}
