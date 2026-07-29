@@ -26,9 +26,17 @@ export default function Navbar() {
                 
 
                 <li 
-                    className={pathname.startsWith("/shop") ? styles.active : ""}
+                    className={`${styles.shop} ${pathname.startsWith("/shop") ? styles.active : ""}`}
                 >
-                    SHOP
+                    <span className={styles.shopText}>SHOP</span>
+
+                    <section className={styles.extension}>
+                        <span>Phone</span>
+                        <span>Phone Accessories</span>
+                        <span>Internet</span>
+                        <span>Cable TV</span>
+                    </section>
+                    
                 </li>
 
                 <Link href="/plans" 

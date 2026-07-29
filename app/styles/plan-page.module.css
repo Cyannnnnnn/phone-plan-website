@@ -11,12 +11,12 @@
 }
 
 .planHeader {
-    background-color: #DCDCDC;
+    background-color: #2F4F4F;
     margin: 0px;
     width: 100vw;
     height: 15%;
     color:#FFEBCD;
-    text-shadow: 1px 1px 2px white;
+    text-shadow: 1px 1px 2px black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,7 +33,7 @@
 .planP {
     width: 40%;
     min-width: 400px;
-    color:lightgray;
+    color:white;
 }
 
 
@@ -54,17 +54,18 @@
   text-align: left;
 }
 
-.header > li {
-    background-color: lightgray;
+.planTable > .header > li {
+    background-color: grey;
+    border-bottom: 1px solid white;
 }
 
 
-.header > :first-child {
+.planTable > .header > :first-child {
     border:none;
     background-color: white;
 }
 
-.header > :last-child {
+.planTable > .header > :last-child {
     border:none;
     background-color: white;
 }
@@ -114,7 +115,8 @@
 
 .tableColumn:not(.header):hover > :last-child {
     background-color: gold;
-    color: white;
+    color: black;
+    text-shadow: 1px 0px 2px orange;
 }
 
 .tableColumn:hover >:first-child > .tag {
@@ -142,7 +144,7 @@
 }
 
 .tableColumn > :first-child > span {
-    color: white;
+    color: black;
     margin: 0px;
     display: flex;
     flex-direction: column;
@@ -155,12 +157,12 @@
 }
 
 .tableColumn > :first-child > :nth-child(2) {
-    color: white;
+    /* color: white; */
     font-size: 3rem;
 }
 
 .tableColumn > :first-child > :nth-child(3) {
-    color: darkgray;
+    color: black;
     font-size: 0.9rem;
 }
 
@@ -168,8 +170,8 @@
 
 
 .tableColumn > li {
-    color:darkgray;
-    border-bottom: 1px gray solid;
+    color:black;
+    border-bottom: 1px grey solid;
     display: flex;
     align-items: center;
 }

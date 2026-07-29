@@ -30,9 +30,13 @@
     /* border: red 1px solid; */
 }
 
-.leftSection > *:hover {
+.leftSection a:hover {
+    color:orange;
+}
+
+.rightSection > *:hover {
+    color:orange;
     cursor: pointer;
-    color: orange;
 }
 
 .leftSection > * {
@@ -52,6 +56,51 @@
 
 }
 
+
+.navContainer > .leftSection > .shop{
+    /* color: black; */
+    /* border: 1px red solid; */
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.shop:hover > .shopText, 
+.extension span:hover {
+    color:orange;
+    cursor: pointer;
+}
+
+.navContainer > .leftSection > .shop:hover{
+    overflow: visible;
+}
+
+.shop:hover > .extension{
+    display:flex;
+    opacity: 1;
+    flex-direction: column;
+    border-top: 1px grey solid;
+}
+
+
+
+
+.extension {
+    position: absolute;
+    /* border:1px solid red; */
+    background-color: black;
+    font-size: 1.6rem;
+    padding: 15px;
+    
+    width: 250px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+
+
 .rightSection {
     color: white;
     margin-left: auto;
@@ -61,9 +110,6 @@
     align-items: center;
 
     font-size: 1.05rem;
+    padding-right: 0.555rem;
     /* border: 1px red solid; */
-}
-
-.rightSection > *:hover {
-    color: orange;
 }
