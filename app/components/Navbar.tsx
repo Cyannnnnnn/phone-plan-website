@@ -57,7 +57,7 @@ export default function Navbar() {
             
             <section className={styles.rightSection}>
                 <span>SIGN IN</span>
-                <span>Don't have an account?</span>
+                <span>{`Don't have an account?`}</span>
             </section>
             
         </nav>
