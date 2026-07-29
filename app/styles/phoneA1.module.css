@@ -4,6 +4,9 @@
     height: 35%;
     margin: 2% auto;
 
+    min-height: 450px;
+    min-width: 1300px;
+
     display: flex;
 
     background-image: url("/phoneAd1.png");
