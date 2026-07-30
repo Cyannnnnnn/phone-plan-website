@@ -1,6 +1,6 @@
 .phoneAd1 {
     /* border: 1px red solid; */
-    width: 85%;
+    width: 60%;
     height: 35%;
     margin: 2% auto;
 
@@ -50,7 +50,7 @@
     margin: 0px;
     color:#B8860B;
     padding: 0.2rem 1.2rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
 
@@ -62,6 +62,7 @@
 .leftSection > :nth-child(2) {
     font-size: 2rem;
     font-weight: 700;
+    margin-bottom: 2rem;
 }
 
 .leftSection > :nth-child(3) {
@@ -86,7 +87,7 @@
 .rightSection > button {
     margin-top: auto;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 10%;
     margin-bottom: 2%;
 
     width: 40%;

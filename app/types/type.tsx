@@ -11,3 +11,12 @@ export type PlaneTableTypes = {
     serverSpeed:boolean | string, 
     header?:boolean
 };
+
+export type PhoneAd2Left = {
+    id: number,
+    title1: string,
+    titleBig: string,
+    titleSmall: string,
+    titleXs: string,
+    src: string
+}
