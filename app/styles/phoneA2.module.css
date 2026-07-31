@@ -13,6 +13,7 @@
                 #ffffff 100%);
 
     display: flex;
+    overflow: auto;
 }
 
 
@@ -54,10 +55,13 @@
 
 .leftSection > div > :nth-child(2) {
     font-size: 2.3rem;
+    font-weight: 700;
+    color: white;
 }
 
 .leftSection > div > :nth-child(3) {
     font-size: 0.9rem;
+    margin-bottom: 0px;
 }
 
 .leftSection > div > :nth-child(4) {
@@ -67,6 +71,7 @@
 .leftSection > div > .preorder {
     width: 28%;
     padding: 1rem 2rem;
+    margin-top: 10%;
     margin-right: 20%;
 
     text-decoration: none;
