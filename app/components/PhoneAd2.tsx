@@ -1,6 +1,11 @@
 "use client"
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
+import { IoPlayCircle } from "react-icons/io5";
+import { IoStopCircleSharp } from "react-icons/io5";
+
+
+
 
 
 import styles from '../styles/phoneA2.module.css'
@@ -17,8 +22,28 @@ export default function PhoneAd2() {
 
     const [current, setCurrent] = useState(0);
 
+    const [isPlaying, setisPlaying] = useState(false);
+
     const leftIndex = (current - 1 + allData.length) % allData.length;
     const rightIndex = (current + 1) % allData.length;
+
+    // Setting the autoplay Button
+
+    useEffect(() => {
+        if(isPlaying === false) {
+            return
+        }
+
+        const interval = setInterval(() => {
+            rightArrow();
+        }, 2000)
+
+        return () => clearInterval(interval);
+
+    }, [isPlaying])
+
+
+
     
 
     // Fetching all the data from Table PopularPhone
@@ -63,10 +88,22 @@ export default function PhoneAd2() {
         );
     })
 
-    const right = allData.map((phone) => {
+    const right = allData.map((phone, index) => {
+        let position = "";
+
+        if(index === leftIndex) {
+            position = styles.leftPic;
+        }
+        else if(index === current) {
+            position = styles.centerPic;
+        }
+        else if(index === rightIndex) {
+            position = styles.rightPic;
+        }
+
         return (
-            <div key={phone.id} className={styles.imgContainer}>
-                <Image src={phone.src} alt={phone.titleBig} fill sizes="50vw" className={styles.pic} />
+            <div key={phone.id} className={`${position} ${styles.imgContainer}`}>
+                <Image src={phone.src} alt={phone.titleBig} fill className={styles.pic} />
             </div>
         )
     })
@@ -80,20 +117,29 @@ export default function PhoneAd2() {
 
             <section className={`${styles.rightSection}`}>
 
-                <div onClick={leftArrow}>
+                <div onClick={leftArrow} className={styles.LbuttonsContainer}>
                     <IoIosArrowDropleft className={styles.buttons} />
                 </div>
+
+                {right}
                 
-                {right[current]}
-                
-                <div onClick={rightArrow}>
+                <div onClick={rightArrow} className={styles.RbuttonsContainer}>
                     <IoIosArrowDropright className={styles.buttons} />
                 </div>
 
-                <p>{leftIndex}</p>
-                <p>{current}</p>
-                <p>{rightIndex}</p>
+                <div className={styles.autoButtonContainer}>
+                    {isPlaying ? 
+                        <IoStopCircleSharp onClick={() => setisPlaying(false)} 
+                            className={styles.autoButton} /> 
+                            : 
+                            <IoPlayCircle onClick={() => setisPlaying(true)} 
+                            className={styles.autoButton} />}
 
+                    {isPlaying && <div className={styles.progressContainer}>
+                                <div className={styles.progress}></div>
+                            </div>}
+                </div>
+                
             </section>
         </section>
     );
