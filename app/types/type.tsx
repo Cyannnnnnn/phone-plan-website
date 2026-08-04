@@ -20,3 +20,13 @@ export type PhoneAd2Left = {
     titleXs: string,
     src: string
 }
+
+
+export type ScrollAds = {
+    id: number,
+    firstTitle: string,
+    bigTitle: string,
+    medTitle: string,
+    smallTitle: string,
+    src: string
+}

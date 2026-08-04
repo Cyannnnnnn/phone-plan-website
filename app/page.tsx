@@ -1,6 +1,8 @@
 import styles from './styles/home-page.module.css'
 import PhoneAd1 from './components/PhoneAd1'
 import PhoneAd2 from './components/PhoneAd2'
+import YoutuAd from './components/YoutuAd';
+import ScrollAds from './components/ScrollAds';
 
 import { Roboto_Mono } from "next/font/google";
 
@@ -24,6 +26,10 @@ export default function Home() {
       <PhoneAd1 />
 
       <PhoneAd2 />
+
+      <YoutuAd />
+
+      <ScrollAds />
 
     </div>
   );

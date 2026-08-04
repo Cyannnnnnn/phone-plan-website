@@ -6,8 +6,6 @@ import { IoStopCircleSharp } from "react-icons/io5";
 
 
 
-
-
 import styles from '../styles/phoneA2.module.css'
 import { supabase } from "../lib/superbase";
 import { useEffect, useState } from 'react';
@@ -102,9 +100,9 @@ export default function PhoneAd2() {
         }
 
         return (
-            <div key={phone.id} className={`${position} ${styles.imgContainer}`}>
+            <Link href="/about" key={phone.id} className={`${position} ${styles.imgContainer}`}>
                 <Image src={phone.src} alt={phone.titleBig} fill className={styles.pic} />
-            </div>
+            </Link>
         )
     })
 
