@@ -20,6 +20,7 @@ export default function ScrollAds() {
     const [play, setPlay] = useState(false);
     const [id, setId] = useState(0);
     const [dir, setDir] = useState("");
+    const [leftMoving, setLeftMoving] = useState(true);
     
 
     //Fetching the data from database
@@ -56,8 +57,11 @@ export default function ScrollAds() {
                 else if(prev < index) {
                     setDir("LEFT")
                 }
+                setLeftMoving(true)
                 return index
-            })
+            }
+           
+            )
         }} />
     })
 
@@ -75,35 +79,28 @@ export default function ScrollAds() {
         
 
         if(index === id) {
-            if(dir === "LEFT")
-                position = styles.activeL;
-            else if(dir === "RIGHT")
-                position = styles.activeR;
-            // position = styles.active;
+            
+            position = styles.active;
             picActive = styles.picActive
         }
         else if(index === index1) {
-            if(dir === "LEFT")
-                position = styles.index1L;
-            else if(dir === "RIGHT")
-                position = styles.index1R;
+            position = styles.index1;
         }
         else if(index === index2) {
-            if(dir === "LEFT")
-                position = styles.index2L;
-            else if(dir === "RIGHT")
-                position = styles.index2R;
+            position = (leftMoving && dir === "LEFT") ? styles.rightMove : styles.index2;
         }
         else if(index === left) {
-            if(dir === "LEFT")
-                position = styles.leftL;
-            else if(dir === "RIGHT")
-                position = styles.leftR;
+            position = (leftMoving && dir==="RIGHT")? styles.leftMove : styles.left;
+            
         }
         // if(index === 0)
         return (
                
-                <div key={p.id} className={`${position} ${styles.adContainer}`}>
+                <div key={p.id} className={
+                    `${position} ${styles.adContainer} 
+                    ${(index === left && dir === "RIGHT") ? styles.leftContainer : ((index === index2 && dir === "LEFT") ? styles.index2Container : styles.regularContainer)}`}
+                    onTransitionEnd={() => {setLeftMoving(false)}}    
+                >
                     
                         <div className={styles.textContainer}>
                             <p>{p.firstTitle}</p>
@@ -167,8 +164,9 @@ export default function ScrollAds() {
                 
             </section>
 
-            <span>Current Id is: {id}</span>
+            <span  className={`${styles.change} ${styles.test}`}>Current Id is: {id}</span>
             <span>Direction is: {dir}</span>
+            <span>LeftMoving is: {leftMoving.toString()}</span>
 
         </section>
     );

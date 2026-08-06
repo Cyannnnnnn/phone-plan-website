@@ -46,7 +46,21 @@
     
 
     /* position: relative; */
-    transition: width 2s ease;
+}
+
+.leftContainer {
+    transition: left 1s ease,
+                opacity 0.5s ease;
+}
+.index2Container {
+    transition: left 0.9s ease,
+                opacity 0.5s ease;
+}
+
+.regularContainer {
+    transition: left 2s ease,
+                width 2s ease,
+                opacity 2s ease;
 }
 
 .textContainer {
@@ -108,149 +122,9 @@
     background-color: #4169E1;
 }
 
-.activeL {
-    width: 45%;
-    animation: activeL 2s ease forwards;
-}
-.activeR {
-    width: 45%;
-    animation: activeR 2s ease forwards;
-}
-
-.index1L {
-    animation: index1L 2s ease forwards;
-}
-
-.index1R {
-    animation: index1R 2s ease forwards;
-}
-
-.index2L {
-    animation: index2L 2s ease forwards;
-}
-
-.index2R {
-    animation: index2R 2s ease forwards;
-}
-
-.leftL {
-   animation: leftL 2s ease forwards;
-}
-
-.leftR {
-   animation: leftR 2s ease forwards;
-}
-
-@keyframes activeL {
-    0% {
-        left: 49%;
-        top: 0;
-    }
-    100% {
-        left: 0;
-        top: 0;
-    }
-}
-
-@keyframes activeR {
-    0% {
-        left: -32%;
-        top: 0;
-    }
-    100% {
-        left: 0;
-        top: 0;
-    }
-}
-
-@keyframes index1L {
-    0% {
-        left: 81%;
-        top: 0;
-    }
-    100% {
-        left: 49%;
-        top: 0;
-    }
-}
-
-@keyframes index1R {
-    0% {
-        left: 0;
-        top: 0;
-    }
-    100% {
-        left: 49%;
-        top: 0;
-    }
-
-}
 
 
-@keyframes index2L {
-    0% {
-        left: -32%;
-        opacity: 0;
-        top: 0;
-    }
-    30% {
-        left: 100%;
-        opacity: 0;
-        top:0;
-        
-    }
-
-    100% {
-        left: 81%;
-        opacity: 1;
-        top:0;
-
-    }
-}
-
-
-@keyframes index2R {
-    0% {
-        left: 49%;
-        top: 0;
-    }
-
-    100% {
-        left: 81%;
-        top:0;
-
-    }
-}
-
-@keyframes leftL {
-    0% {
-        left: 0;
-        top: 0;
-    }
-    100% {
-        left: -32%;
-        top: 0;
-    }
-}
-
-@keyframes leftR {
-    0% {
-        left: 81%;
-        top:0;
-    }
-    80% {
-        left: 120%;
-        top: 0;
-        opacity: 0;
-    }
-    100% {
-        left: -32%;
-        top: 0;
-        opacity: 0;
-    }
-}
-
-/* .active {
+.active {
     left:0;
     top: 0;
     width:47%;
@@ -267,13 +141,26 @@
    top:0;
 }
 
+.leftMove {
+    left: 110%;
+    top: 0;
+    opacity: 0;
+    
+}
+
+.rightMove {
+    left: 100%;
+    top: 0;
+    opacity: 0;
+}
+
 .left {
    
     left: -32%;
     top: 0;
     opacity: 0;
-    transition-delay: 2s;
-} */
+   
+}
 
 
 
@@ -418,4 +305,15 @@
     to {
         stroke-dashoffset: 0;
     }
+}
+
+
+
+
+.test {
+    transition: transform 2s ease;
+}
+
+.change {
+    transform: scale(1.2);
 }
