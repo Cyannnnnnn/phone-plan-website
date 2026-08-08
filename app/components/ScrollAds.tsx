@@ -43,6 +43,9 @@ export default function ScrollAds() {
         
         
     }, [])
+    
+
+    
 
 
     const allCircles = data.map((p, index) => {
@@ -120,6 +123,18 @@ export default function ScrollAds() {
     })
 
 
+    useEffect(() => {
+        if(!play) {
+            return
+        }
+        const autoPlay = setInterval(() => {
+            setId((prev) => {return (prev + 1) % total})
+        }, 5000);
+
+        return () => clearInterval(autoPlay);
+    }, [play])
+
+
     
 
     return (
@@ -164,9 +179,10 @@ export default function ScrollAds() {
                 
             </section>
 
-            <span  className={`${styles.change} ${styles.test}`}>Current Id is: {id}</span>
+            {/* <span>Current Id is: {id}</span>
             <span>Direction is: {dir}</span>
             <span>LeftMoving is: {leftMoving.toString()}</span>
+            <span>Play is {play.toString()}</span> */}
 
         </section>
     );

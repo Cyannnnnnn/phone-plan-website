@@ -1,0 +1,57 @@
+.bottomMenuContainer {
+    min-width: 800px;
+    min-height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 1px red solid; */
+
+}
+
+.bottomMenuContainer > h1 {
+    margin: 0px 0px 1.5rem 0px;
+    
+}
+
+
+
+
+.submenu {
+    margin: 0px;
+
+    display: flex;
+    gap: 0.8rem;
+
+    /* border: 1px black solid; */
+    min-width: 900px;
+}
+
+.submenu > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 1px yellow solid; */
+    width: 23%;
+}
+
+.submenu > li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.submenu > li > a {
+    text-decoration: none;
+    color:#0072b2;
+    font-weight: bold;
+}
+
+.allLogos {
+    color: #1E90FF;
+    height: 80px;
+    width: 80px;
+}

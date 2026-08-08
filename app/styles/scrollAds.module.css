@@ -54,7 +54,7 @@
 }
 .index2Container {
     transition: left 0.9s ease,
-                opacity 0.5s ease;
+                opacity 1s ease-in 1s;
 }
 
 .regularContainer {
@@ -297,7 +297,7 @@
 
 .playing {
     stroke-dashoffset: 126;
-    animation: progress 5s linear infinite;
+    animation: progress 5s ease-in-out infinite;
 }
 
 
@@ -310,10 +310,3 @@
 
 
 
-.test {
-    transition: transform 2s ease;
-}
-
-.change {
-    transform: scale(1.2);
-}

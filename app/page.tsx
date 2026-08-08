@@ -3,6 +3,7 @@ import PhoneAd1 from './components/PhoneAd1'
 import PhoneAd2 from './components/PhoneAd2'
 import YoutuAd from './components/YoutuAd';
 import ScrollAds from './components/ScrollAds';
+import BottomMenu from './components/BottomMenu';
 
 import { Roboto_Mono } from "next/font/google";
 
@@ -30,6 +31,8 @@ export default function Home() {
       <YoutuAd />
 
       <ScrollAds />
+
+      <BottomMenu />
 
     </div>
   );
