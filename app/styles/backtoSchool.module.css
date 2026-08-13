@@ -11,7 +11,7 @@
 
     display: flex;
 
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
 }
 
@@ -19,10 +19,72 @@
     transform: scale(1.02);
 }
 
+
+/* Background Image */
 .img {
     position:absolute;
     object-fit: cover;
     object-position: center;
     z-index: -1;
     transition: transform 0.5s ease;
+}
+
+/* The card CSS */
+/* All the cards's container */
+.outsideContainer {
+    display: flex;
+    
+
+    border: 1px red solid;
+
+    width: 27%;
+    height: 80%;
+
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-left: 3rem;
+
+    overflow: visible;
+
+    position: relative;
+}
+
+
+.cardContainer {
+    width: 400%;
+    height: 100%;
+    /* border: 1px red solid; */
+    flex-shrink: 0;
+
+    display: flex;
+    gap: 1rem;
+
+    position: absolute;
+
+}
+
+/* .cardContainer > *:not(:last-child) {
+    
+    margin-right: 1%;
+} */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+
+    width: 25%;
+    height: 100%;
+
+   margin-top: 0px;
+   margin-bottom: 0px;
+   border: 1px yellow solid;
+   padding: 1rem 2rem;
+}
+
+.phonePic {
+    width: 20%;
+    height: 50%;
 }
