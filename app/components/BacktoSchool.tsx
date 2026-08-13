@@ -35,10 +35,12 @@ export default function BacktoSchool() {
     const allCards = data.map((card) => {
         return (
             <div key={card.id} className={styles.card}>
-                <p>{card.firstTitle}</p>
-                <p>{card.bigTitle}</p>
-                <p>{card.medTitle}</p>
-                <p>{card.smallTitle}</p>
+                <div className={styles.topParagraph}>
+                    <p>{card.firstTitle}</p>
+                    <p>{card.bigTitle}</p>
+                    <p>{card.medTitle}</p>
+                    <p>{card.smallTitle}</p>
+                </div>
                 <Image 
                     className={styles.phonePic}
                     src={card.src} 

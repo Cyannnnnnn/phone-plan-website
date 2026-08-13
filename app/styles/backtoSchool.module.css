@@ -85,8 +85,16 @@
    padding: 1rem 2rem;
 }
 
+.topParagraph {
+    height: 50%;
+}
+.topParagraph > * {
+    margin: 0px 0px;
+    text-align: center;
+}
+
 .phonePic {
     width: 40%;
     height: 50%;
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
 }
