@@ -4,12 +4,12 @@ import styles from "@/app/styles/backtoSchool.module.css"
 import Image from "next/image"
 import { supabase } from "../lib/superbase"
 import { useEffect, useState } from "react";
-import type { ScrollAds } from "../types/type";
+import type { CopyScrollAds } from "../types/type";
 
 export default function BacktoSchool() {
 
-    const [data, setData] = useState<ScrollAds[]>([]);
-    const [activeNum, setActiveNum] = useState(0);
+    const [data, setData] = useState<CopyScrollAds[]>([]);
+    const [activeNum, setActiveNum] = useState(1);
 
     useEffect(() => {
 
@@ -23,7 +23,27 @@ export default function BacktoSchool() {
                 return
             }
 
-            setData(data);
+            const carouselData =
+                    data.length > 0
+                        ? [
+                            {
+                                ...data[data.length - 1],
+                                reactKey: `last-copy-${data[data.length - 1].id}`
+                            },
+
+                            ...data.map(card => ({
+                                ...card,
+                                reactKey: `original-${card.id}`
+                            })),
+
+                            {
+                                ...data[0],
+                                reactKey: `first-copy-${data[0].id}`
+                            }
+                        ]
+                        : [];
+
+            setData(carouselData);
             
         }
 
@@ -34,7 +54,7 @@ export default function BacktoSchool() {
 
     const allCards = data.map((card) => {
         return (
-            <div key={card.id} className={styles.card}>
+            <div key={card.reactKey} className={styles.card}>
                 <div className={styles.topParagraph}>
                     <p>{card.firstTitle}</p>
                     <p>{card.bigTitle}</p>
@@ -52,6 +72,8 @@ export default function BacktoSchool() {
         )
     })
     
+    const total = allCards.length;
+    
 
     return (
         <section className={styles.mainContainer}>
@@ -68,8 +90,8 @@ export default function BacktoSchool() {
 
             </div>
 
-            <button onClick={() => setActiveNum(prev => prev - 1)}>{`<`}</button>
-            <button onClick={() => setActiveNum(prev => prev + 1)}>{`>`}</button>
+            <button onClick={() => setActiveNum(prev => (prev - 1 + total) % total)}>{`<`}</button>
+            <button onClick={() => setActiveNum(prev => (prev + 1) % total)}>{`>`}</button>
         </section>
     )
 }

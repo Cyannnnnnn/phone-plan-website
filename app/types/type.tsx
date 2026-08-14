@@ -30,3 +30,13 @@ export type ScrollAds = {
     smallTitle: string,
     src: string
 }
+
+export type CopyScrollAds = {
+    id: number,
+    firstTitle: string,
+    bigTitle: string,
+    medTitle: string,
+    smallTitle: string,
+    src: string,
+    reactKey: string
+}
