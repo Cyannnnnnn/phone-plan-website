@@ -10,6 +10,7 @@ export default function BacktoSchool() {
 
     const [data, setData] = useState<CopyScrollAds[]>([]);
     const [activeNum, setActiveNum] = useState(1);
+    const [transition, setTransition] = useState(true);
 
     useEffect(() => {
 
@@ -75,6 +76,18 @@ export default function BacktoSchool() {
     const total = allCards.length;
     
 
+    function handleClick(dir:string) {
+        
+        
+        if(dir === "left") {
+            setActiveNum(prev => (prev - 1 + total) % total)
+        }
+        else if(dir === "right") {
+            setActiveNum(prev => (prev + 1) % total)
+        }
+
+    }
+
     return (
         <section className={styles.mainContainer}>
             <Image 
@@ -84,14 +97,39 @@ export default function BacktoSchool() {
             />
             <div className={styles.outsideContainer}>
 
-                <div className={`${styles.cardContainer}`} style={{left: `calc(-${activeNum * 100}% - ${activeNum}rem)`}}>
+                <div className={`${styles.cardContainer}`} 
+                    style={{
+                            left: `calc(-${activeNum * 100}% - ${activeNum}rem)`,
+                            transition: transition
+                                        ? "left 0.5s ease"
+                                        : "none"
+                        }}
+                    
+                    onTransitionEnd={() => {
+                        if (activeNum === 0 || activeNum === 5) {
+                            setTransition(false);
+                            
+                            if(activeNum === 0)
+                                setActiveNum(4);
+                            else if(activeNum === 5)
+                                setActiveNum(1);
+
+                            requestAnimationFrame(() => {
+                                requestAnimationFrame(() => {
+                                    setTransition(true);
+                                });
+                            });
+                        }
+
+                    }}
+                >
                     {allCards}
                 </div>
 
             </div>
 
-            <button onClick={() => setActiveNum(prev => (prev - 1 + total) % total)}>{`<`}</button>
-            <button onClick={() => setActiveNum(prev => (prev + 1) % total)}>{`>`}</button>
+            <button onClick={() => handleClick("left")}>{`<`}</button>
+            <button onClick={() => handleClick("right")}>{`>`}</button>
         </section>
     )
 }

@@ -44,7 +44,7 @@
     margin-top: 1rem;
     margin-left: 3rem;
 
-    overflow: visible;
+    overflow: hidden;
 
     position: relative;
 }
@@ -58,7 +58,8 @@
 
     display: flex;
     gap: 1rem;
-    transition: left 1s ease;
+    /* transition: left 1s ease; */
+    /* overflow: hidden; */
 
     position: absolute;
 
