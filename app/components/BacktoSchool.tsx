@@ -6,9 +6,15 @@ import { supabase } from "../lib/superbase"
 import { useEffect, useState } from "react";
 import type { CopyScrollAds } from "../types/type";
 
+import CircleSelector from "./CircleSelector";
+import { IoIosArrowDropleft } from "react-icons/io";
+import { IoIosArrowDropright } from "react-icons/io";
+
+
 export default function BacktoSchool() {
 
     const [data, setData] = useState<CopyScrollAds[]>([]);
+    const [rawData, setRawData] = useState<any[]>([]);
     const [activeNum, setActiveNum] = useState(1);
     const [transition, setTransition] = useState(true);
 
@@ -23,6 +29,8 @@ export default function BacktoSchool() {
                 console.error("Error when fetching data", error);
                 return
             }
+
+            setRawData(data);
 
             const carouselData =
                     data.length > 0
@@ -53,6 +61,8 @@ export default function BacktoSchool() {
 
     console.log("The fetched data is: ", data)
 
+
+    // Defining the allCards here
     const allCards = data.map((card) => {
         return (
             <div key={card.reactKey} className={styles.card}>
@@ -72,8 +82,31 @@ export default function BacktoSchool() {
             </div>
         )
     })
+
+
+
     
     const total = allCards.length;
+
+
+    // Setting all of the circleSelectors
+    const circleControl = rawData.map((c, index) => {
+                return (
+                    <CircleSelector
+                        key={c.id} 
+                        selected={index===(activeNum - 1)} 
+                        handleClick={() => {
+                            setActiveNum((prev) => {
+                                if(((prev - 1) === 0) && (index === 3))
+                                    return 0;
+                                else if(((prev - 1) === 3) && (index === 0))
+                                    return 5;
+                                else return index + 1;
+                            })
+                        }}
+                    />  
+                );
+            })
     
 
     function handleClick(dir:string) {
@@ -126,10 +159,33 @@ export default function BacktoSchool() {
                     {allCards}
                 </div>
 
+                <div className={styles.controlPanel} >
+
+                    <span>
+                        <IoIosArrowDropleft 
+                            className={styles.arrows} 
+                            onClick={() => handleClick("left")} 
+                        />
+                    </span>
+                    {circleControl}
+                    <span>
+                        <IoIosArrowDropright 
+                            className={styles.arrows}
+                            onClick={() => handleClick("right")}
+                        />
+                    </span>
+                </div>
+
             </div>
 
-            <button onClick={() => handleClick("left")}>{`<`}</button>
-            <button onClick={() => handleClick("right")}>{`>`}</button>
+
+            <section className={styles.textContainer}>
+                    <p>Make it their best year yet</p>
+                    <p>Shop great deals on the tech they need to take on every challenge.</p>
+                </section>
+            
+
+            
         </section>
     )
 }

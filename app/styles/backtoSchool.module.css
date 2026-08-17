@@ -1,17 +1,17 @@
 .mainContainer {
    
     width: 80%;
-    height: 32%;
+    height: 37%;
     min-width: 1300px;
     min-height: 400px;
 
     margin: 7rem auto 2rem auto;
     border-radius: 2rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
     display: flex;
 
-    /* overflow: hidden; */
+    overflow: hidden;
     position: relative;
 }
 
@@ -35,10 +35,10 @@
     display: flex;
     
 
-    border: 1px red solid;
+    /* border: 1px red solid; */
 
     width: 27%;
-    height: 80%;
+    height: 95%;
 
     margin-right: auto;
     margin-top: 1rem;
@@ -52,7 +52,7 @@
 
 .cardContainer {
     width: 400%;
-    height: 100%;
+    height: 90%;
     /* border: 1px red solid; */
     flex-shrink: 0;
 
@@ -82,7 +82,10 @@
 
    margin-top: 0px;
    margin-bottom: 0px;
-   border: 1px yellow solid;
+   /* border: 1px yellow solid; */
+
+   background-color: white;
+   border-radius: 2rem;
    padding: 1rem 2rem;
 }
 
@@ -91,11 +94,105 @@
 }
 .topParagraph > * {
     margin: 0px 0px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
+
+.topParagraph > :first-child {
+    font-size: 1rem;
+}
+
+.topParagraph > :nth-child(2) {
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 0rem;
+    line-height: 2rem;
+}
+
+.topParagraph > :nth-child(3) {
+    font-size: 1rem;
+}
+
+.topParagraph > :nth-child(4) {
+    font-size: 0.7rem;
+}
+
 .phonePic {
-    width: 40%;
-    height: 50%;
+    margin-top: auto;
+    width: 42%;
+    height: 38%;
     /* flex-shrink: 0; */
+}
+
+.controlPanel {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: white;
+    border-radius: 2rem;
+
+    height: 6%;
+    width: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controlPanel > span {
+    /* border: 1px red solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controlPanel > :first-child {
+    margin-right: 0.5rem;
+}
+
+.controlPanel > :last-child {
+    margin-left: 0.5rem;
+}
+
+.arrows {
+    width: 26px;
+    height: 26px;
+    color: #6495ED;
+}
+
+
+.textContainer {
+    margin-left: auto;
+    margin-right: 18%;
+
+    height: 60%;
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+
+
+    /* border: 1px red solid; */
+}
+
+.textContainer > * {
+    margin: 1rem 1rem;
+    color: #F0FFFF;
+}
+
+.textContainer > :first-child {
+    font-size: 3.5rem;
+    font-weight: bold;
+
+    letter-spacing: -5px;
+    line-height: 50px;
+}
+
+.textContainer > :nth-child(2) {
+    font-size: 1.5rem;
+
 }
