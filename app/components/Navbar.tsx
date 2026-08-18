@@ -25,7 +25,12 @@ export default function Navbar() {
             <section className={`${styles.leftSection} ${bebas.className}`}>
 
 
-                <Link href="/">HOME</Link>
+                <Link 
+                    href="/"
+                    className={pathname === "/" ? styles.active : ""}
+                >
+                    HOME
+                </Link>
                 
 
                 <li 
