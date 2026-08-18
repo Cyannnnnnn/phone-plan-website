@@ -4,7 +4,7 @@ import styles from "@/app/styles/backtoSchool.module.css"
 import Image from "next/image"
 import { supabase } from "../lib/superbase"
 import { useEffect, useState } from "react";
-import type { CopyScrollAds } from "../types/type";
+import type { CopyScrollAds, ScrollAds } from "../types/type";
 
 import CircleSelector from "./CircleSelector";
 import { IoIosArrowDropleft } from "react-icons/io";
@@ -14,7 +14,7 @@ import { IoIosArrowDropright } from "react-icons/io";
 export default function BacktoSchool() {
 
     const [data, setData] = useState<CopyScrollAds[]>([]);
-    const [rawData, setRawData] = useState<any[]>([]);
+    const [rawData, setRawData] = useState<ScrollAds[]>([]);
     const [activeNum, setActiveNum] = useState(1);
     const [transition, setTransition] = useState(true);
 

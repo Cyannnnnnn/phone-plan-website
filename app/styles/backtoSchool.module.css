@@ -38,7 +38,7 @@
     /* border: 1px red solid; */
 
     width: 27%;
-    height: 95%;
+    height: 97%;
 
     margin-right: auto;
     margin-top: 1rem;
@@ -91,6 +91,9 @@
 
 .topParagraph {
     height: 50%;
+    /* border: 1px red solid; */
+    /* overflow: auto; */
+    
 }
 .topParagraph > * {
     margin: 0px 0px;
@@ -115,14 +118,15 @@
 }
 
 .topParagraph > :nth-child(4) {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
 }
 
 .phonePic {
     margin-top: auto;
-    width: 42%;
-    height: 38%;
+    width: 38%;
+    height: 33%;
     /* flex-shrink: 0; */
+    /* border: 1px red solid; */
 }
 
 .controlPanel {
