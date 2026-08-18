@@ -1,0 +1,77 @@
+.mainContainer {
+
+    width: 80%;
+    height: 60%;
+    
+    min-width: 1300px;
+    min-height: 400px;
+
+    padding-top: 0px;
+
+    margin: 7rem auto 2rem auto;
+    border-radius: 2rem;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+
+    /* justify-content: center; */
+    align-items: center;
+    
+}
+
+.mainContainer > h1 {
+    margin: 0px;
+    font-size: 2.7rem;
+    font-weight: bold;
+    letter-spacing: -3px;
+}
+
+
+
+/* mainContentContainer CSS */
+.mainContentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px red solid;
+    height:83%;
+    width: 90%;
+}
+
+
+/* Arrows CSS */
+.mainContentContainer > :first-child {
+    margin-right: 2rem;
+}
+
+.mainContentContainer > :last-child {
+    margin-left: 2rem;
+}
+
+.arrows {
+    width: 50px;
+    height: 50px;
+    color: #1E90FF;
+}
+
+
+
+/* mainContent CSS */
+.mainContent {
+    width: 85%;
+    height:100%;
+    border: 1px black solid;
+}
+
+
+
+
+/* circleControl CSS */
+.circleControl {
+    height: 8%;
+    width: 30%;
+    margin-top: 1rem;
+    border: 1px blue solid;
+}
