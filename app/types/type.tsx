@@ -31,6 +31,16 @@ export type ScrollAds = {
     src: string
 }
 
+
+export type ConnectedAds = {
+    id: number,
+    title?: string,
+    bigText?: string,
+    medText?: string,
+    smallText?: string,
+    src: string
+}
+
 export type CopyScrollAds = {
     id: number,
     firstTitle: string,
