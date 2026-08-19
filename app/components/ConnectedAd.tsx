@@ -63,6 +63,21 @@ export default function ConnectedAd() {
     const leftgrey = position === 0;
     const rightgrey = position === range;
 
+    const circleGroup = [];
+
+    for(let i=0; i<(range + 1); i++) {
+        circleGroup.push(
+            <input 
+                type="radio" 
+                name="card"
+                value={i}
+                className={styles.radio}
+                checked={position === i}
+                onChange={() => {setPosition(i)}} 
+            />
+        )
+    }
+
 
     return (
         <section className={styles.mainContainer}>
@@ -117,11 +132,11 @@ export default function ConnectedAd() {
                 />
             </div>
 
-            <div className={styles.circleControl}></div>
+            <div className={styles.circleControl}>
+                    {circleGroup}
+            </div>
 
-            <span>The position is: {position}</span>
-            <span>The leftgrey is:{leftgrey.toString()}</span>
-            <span>The rightgrey is:{rightgrey.toString()}</span>
+            
         </section>
     )
 }
